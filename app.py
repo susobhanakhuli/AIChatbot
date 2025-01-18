@@ -19,7 +19,7 @@ def download_pdf_from_url(url, output_path):
     if response.status_code == 200:
         with open(output_path, "wb") as f:
             f.write(response.content)
-        st.success(f"PDF downloaded and saved to {output_path}")
+        # st.success(f"PDF downloaded and saved to {output_path}")
     else:
         st.error(f"Failed to download PDF. Status code: {response.status_code}")
 
