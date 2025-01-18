@@ -4,3 +4,6 @@ numpy==1.23.5
 requests==2.28.2
 PyPDF2==3.0.0
 transformers==4.28.0
+langchain==0.0.291
+langchain_community==0.0.1
+openai==0.10.0
