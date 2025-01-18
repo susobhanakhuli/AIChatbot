@@ -22,13 +22,6 @@ from ...utils import logging
 
 logger = logging.get_logger(__name__)
 
-INFORMER_PRETRAINED_CONFIG_ARCHIVE_MAP = {
-    "huggingface/informer-tourism-monthly": (
-        "https://huggingface.co/huggingface/informer-tourism-monthly/resolve/main/config.json"
-    ),
-    # See all Informer models at https://huggingface.co/models?filter=informer
-}
-
 
 class InformerConfig(PretrainedConfig):
     r"""
@@ -133,6 +126,7 @@ class InformerConfig(PretrainedConfig):
     >>> # Accessing the model configuration
     >>> configuration = model.config
     ```"""
+
     model_type = "informer"
     attribute_map = {
         "hidden_size": "d_model",
@@ -232,9 +226,6 @@ class InformerConfig(PretrainedConfig):
         self.activation_function = activation_function
         self.init_std = init_std
 
-        self.output_attentions = False
-        self.output_hidden_states = False
-
         self.use_cache = use_cache
 
         # Informer
@@ -253,3 +244,6 @@ class InformerConfig(PretrainedConfig):
             + self.num_static_real_features
             + self.input_size * 2  # the log1p(abs(loc)) and log(scale) features
         )
+
+
+__all__ = ["InformerConfig"]
